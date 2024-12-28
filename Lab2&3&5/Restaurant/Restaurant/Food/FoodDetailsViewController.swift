@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class FoodDetailsViewController: UIViewController {
 
@@ -19,9 +20,6 @@ class FoodDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
-//        commentTableView.rowHeight = UITableView.automaticDimension
         
         foodImage.image = selectedFood?.image
         foodNameLabel.text = selectedFood?.name
@@ -64,6 +62,18 @@ class FoodDetailsViewController: UIViewController {
         
     }
     
+    @IBAction func cameraButtonPressed(sender: Any) {
+        let cameraVC = CameraViewController()
+        cameraVC.delegate = self
+        present(cameraVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func openMap(sender: Any) {
+        let mapVC = MapViewController()
+        mapVC.targetCoordinate = CLLocationCoordinate2D(latitude: 42.0044, longitude: 21.3916)
+                present(mapVC, animated: true, completion: nil)
+    }
+    
     func showAlert(title: String) {
            let alertController = UIAlertController(title: "Product Title", message: title, preferredStyle: .alert)
            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -74,17 +84,13 @@ class FoodDetailsViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Enter Text", message: nil, preferredStyle: .alert)
 
-                // Add a text field to the alert controller
                 alertController.addTextField { (textField) in
                     textField.placeholder = "Enter text here"
                 }
 
-                // Create action
                 let confirmAction = UIAlertAction(title: "OK", style: .default) { (_) in
-                    // When OK button tapped, get the text entered
                     if let text = alertController.textFields?[0].text {
                         print("Text entered: \(text)")
-                        // Do something with the entered text
                         
                         guard let name = self.selectedFood?.name,
                            var savedArray = UserDefaults.standard.object(forKey: name) as? Array<String>
@@ -102,10 +108,8 @@ class FoodDetailsViewController: UIViewController {
                     }
                 }
 
-                // Add action to alert controller
                 alertController.addAction(confirmAction)
 
-                // Present the alert controller
                 present(alertController, animated: true, completion: nil)
     }
     
@@ -114,7 +118,7 @@ class FoodDetailsViewController: UIViewController {
 extension FoodDetailsViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var savedArray = UserDefaults.standard.object(forKey: selectedFood?.name ?? "") as? Array<String>
+        let savedArray = UserDefaults.standard.object(forKey: selectedFood?.name ?? "") as? Array<String>
         return savedArray?.count ?? 0
     }
     
@@ -123,7 +127,7 @@ extension FoodDetailsViewController : UITableViewDataSource, UITableViewDelegate
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentTableViewCell.identifier, for: indexPath) as! CommentTableViewCell
         
-        var savedArray = UserDefaults.standard.object(forKey: selectedFood?.name ?? "") as? Array<String>
+        let savedArray = UserDefaults.standard.object(forKey: selectedFood?.name ?? "") as? Array<String>
         
         cell.comment.text = savedArray?[indexPath.row]
         
@@ -137,4 +141,10 @@ extension FoodDetailsViewController : UITableViewDataSource, UITableViewDelegate
     
     
     
+}
+
+extension FoodDetailsViewController: CameraViewControllerDelegate {
+    func didCaptureImage(_ image: UIImage) {
+        foodImage.image = image
+    }
 }

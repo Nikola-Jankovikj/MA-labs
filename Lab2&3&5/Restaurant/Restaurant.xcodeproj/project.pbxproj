@@ -10,6 +10,9 @@
 		F91D60DD2BE4F58400DA124A /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D60DC2BE4F58400DA124A /* FoodViewController.swift */; };
 		F91D60E02BE4FC5600DA124A /* ConsumableTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91D60DF2BE4FC5600DA124A /* ConsumableTableViewCell.xib */; };
 		F91D60E12BE4FC5600DA124A /* ConsumableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D60DE2BE4FC5600DA124A /* ConsumableTableViewCell.swift */; };
+		F92E845D2D20812300C9C054 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E845C2D20812300C9C054 /* CameraViewController.swift */; };
+		F92E845F2D20816500C9C054 /* CameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E845E2D20816500C9C054 /* CameraViewControllerDelegate.swift */; };
+		F92E84612D20878700C9C054 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92E84602D20878700C9C054 /* MapViewController.swift */; };
 		F94176E82BE398CC00AA0C03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94176E72BE398CC00AA0C03 /* AppDelegate.swift */; };
 		F94176EA2BE398CC00AA0C03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94176E92BE398CC00AA0C03 /* SceneDelegate.swift */; };
 		F94176EC2BE398CC00AA0C03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94176EB2BE398CC00AA0C03 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 		F91D60DC2BE4F58400DA124A /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		F91D60DE2BE4FC5600DA124A /* ConsumableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumableTableViewCell.swift; sourceTree = "<group>"; };
 		F91D60DF2BE4FC5600DA124A /* ConsumableTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConsumableTableViewCell.xib; sourceTree = "<group>"; };
+		F92E845C2D20812300C9C054 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		F92E845E2D20816500C9C054 /* CameraViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewControllerDelegate.swift; sourceTree = "<group>"; };
+		F92E84602D20878700C9C054 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Restaurant/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		F94176E42BE398CC00AA0C03 /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F94176E72BE398CC00AA0C03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F94176E92BE398CC00AA0C03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 				F94176F02BE398CE00AA0C03 /* Assets.xcassets */,
 				F94176F22BE398CE00AA0C03 /* LaunchScreen.storyboard */,
 				F94176F52BE398CE00AA0C03 /* Info.plist */,
+				F92E845C2D20812300C9C054 /* CameraViewController.swift */,
+				F92E845E2D20816500C9C054 /* CameraViewControllerDelegate.swift */,
+				F92E84602D20878700C9C054 /* MapViewController.swift */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -197,11 +206,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9C4BD442BE50664004AF651 /* Consumable.swift in Sources */,
+				F92E845D2D20812300C9C054 /* CameraViewController.swift in Sources */,
 				F94176EC2BE398CC00AA0C03 /* ViewController.swift in Sources */,
 				F94176E82BE398CC00AA0C03 /* AppDelegate.swift in Sources */,
 				F91D60E12BE4FC5600DA124A /* ConsumableTableViewCell.swift in Sources */,
 				F9C4BD572BE81A56004AF651 /* CommentTableViewCell.swift in Sources */,
 				F9C4BD462BE50B6B004AF651 /* FoodDetailsViewController.swift in Sources */,
+				F92E84612D20878700C9C054 /* MapViewController.swift in Sources */,
+				F92E845F2D20816500C9C054 /* CameraViewControllerDelegate.swift in Sources */,
 				F91D60DD2BE4F58400DA124A /* FoodViewController.swift in Sources */,
 				F94176EA2BE398CC00AA0C03 /* SceneDelegate.swift in Sources */,
 				F9C4BD482BE5173C004AF651 /* DrinksViewController.swift in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QST-Xn-VDR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QST-Xn-VDR">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -105,13 +105,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sda-wh-UD6">
-                                <rect key="frame" x="16" y="238" width="361" height="21"/>
+                                <rect key="frame" x="16" y="238" width="361" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xbb-4f-kIL">
-                                <rect key="frame" x="16" y="275" width="361" height="156"/>
+                                <rect key="frame" x="16" y="274.33333333333331" width="361" height="156"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="I3Y-lr-0CC"/>
@@ -122,37 +122,53 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xy1-lV-V5H">
-                                <rect key="frame" x="16" y="447" width="361" height="387"/>
+                                <rect key="frame" x="16" y="446.33333333333326" width="361" height="387.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ZXI-MG-4tC" id="gYg-DQ-L7s"/>
                                     <outlet property="delegate" destination="ZXI-MG-4tC" id="yM1-JO-VQ5"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeY-Z4-ncf">
-                                <rect key="frame" x="313" y="738" width="64" height="64"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PpY-7d-TN5">
+                                <rect key="frame" x="16" y="738" width="361" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-xZ-1UK">
+                                        <rect key="frame" x="0.0" y="0.0" width="66.333333333333329" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="questionmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="makeHttpReqPressed:" destination="ZXI-MG-4tC" eventType="touchUpInside" id="j5o-dA-r7z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJw-1g-TEY">
+                                        <rect key="frame" x="98.333333333333343" y="0.0" width="66.333333333333343" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="map" catalog="system"/>
+                                        <connections>
+                                            <action selector="openMapWithSender:" destination="ZXI-MG-4tC" eventType="touchUpInside" id="hdr-wq-fVw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQd-GG-ziC">
+                                        <rect key="frame" x="196.66666666666666" y="0.0" width="65.999999999999972" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="camera" catalog="system"/>
+                                        <connections>
+                                            <action selector="cameraButtonPressedWithSender:" destination="ZXI-MG-4tC" eventType="touchUpInside" id="LnO-yk-11Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeY-Z4-ncf">
+                                        <rect key="frame" x="294.66666666666669" y="0.0" width="66.333333333333314" height="50"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="addCommentPressed:" destination="ZXI-MG-4tC" eventType="touchUpInside" id="kTO-RM-Vi4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="NQ8-M6-1nT"/>
-                                    <constraint firstAttribute="width" constant="64" id="a7g-mn-3PS"/>
+                                    <constraint firstAttribute="height" constant="50" id="gd0-fg-Afh"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="addBtn"/>
-                                <connections>
-                                    <action selector="addCommentPressed:" destination="ZXI-MG-4tC" eventType="touchUpInside" id="kTO-RM-Vi4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-xZ-1UK">
-                                <rect key="frame" x="16" y="738" width="64" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="9ic-gx-cOg"/>
-                                    <constraint firstAttribute="height" constant="64" id="tJg-e2-K9B"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="questionMarkBtn"/>
-                                <connections>
-                                    <action selector="makeHttpReqPressed:" destination="ZXI-MG-4tC" eventType="touchUpInside" id="j5o-dA-r7z"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ftn-yo-qJC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,16 +179,15 @@
                             <constraint firstItem="sda-wh-UD6" firstAttribute="top" secondItem="R8y-Lj-I6X" secondAttribute="bottom" constant="16" id="DPq-R7-HjY"/>
                             <constraint firstItem="Xy1-lV-V5H" firstAttribute="top" secondItem="xbb-4f-kIL" secondAttribute="bottom" constant="16" id="Eoe-X1-vzc"/>
                             <constraint firstItem="ftn-yo-qJC" firstAttribute="trailing" secondItem="sda-wh-UD6" secondAttribute="trailing" constant="16" id="NLd-jW-7Bh"/>
-                            <constraint firstItem="Rmb-xZ-1UK" firstAttribute="leading" secondItem="wb7-Ck-4J1" secondAttribute="leading" constant="16" id="OUr-Mm-xmK"/>
+                            <constraint firstItem="ftn-yo-qJC" firstAttribute="trailing" secondItem="PpY-7d-TN5" secondAttribute="trailing" constant="16" id="UGF-um-PPD"/>
                             <constraint firstItem="R8y-Lj-I6X" firstAttribute="top" secondItem="ftn-yo-qJC" secondAttribute="top" constant="35" id="V05-cR-XCQ"/>
-                            <constraint firstItem="ftn-yo-qJC" firstAttribute="bottom" secondItem="HeY-Z4-ncf" secondAttribute="bottom" constant="16" id="dGj-Mc-1Ne"/>
                             <constraint firstItem="sda-wh-UD6" firstAttribute="leading" secondItem="ftn-yo-qJC" secondAttribute="leading" constant="16" id="edg-tW-bCm"/>
                             <constraint firstItem="ftn-yo-qJC" firstAttribute="trailing" secondItem="Xy1-lV-V5H" secondAttribute="trailing" constant="16" id="fT1-g7-9GC"/>
-                            <constraint firstAttribute="trailing" secondItem="HeY-Z4-ncf" secondAttribute="trailing" constant="16" id="hWN-n6-Sev"/>
                             <constraint firstItem="Xy1-lV-V5H" firstAttribute="leading" secondItem="ftn-yo-qJC" secondAttribute="leading" constant="16" id="uZ6-rt-MEy"/>
                             <constraint firstItem="xbb-4f-kIL" firstAttribute="top" secondItem="sda-wh-UD6" secondAttribute="bottom" constant="16" id="xTe-wA-tCB"/>
-                            <constraint firstItem="ftn-yo-qJC" firstAttribute="bottom" secondItem="Rmb-xZ-1UK" secondAttribute="bottom" constant="16" id="yaX-3m-c8N"/>
+                            <constraint firstItem="PpY-7d-TN5" firstAttribute="leading" secondItem="ftn-yo-qJC" secondAttribute="leading" constant="16" id="z01-cV-KNI"/>
                             <constraint firstItem="Xy1-lV-V5H" firstAttribute="bottom" secondItem="ftn-yo-qJC" secondAttribute="bottom" constant="16" id="znu-Bt-4Do"/>
+                            <constraint firstItem="ftn-yo-qJC" firstAttribute="bottom" secondItem="PpY-7d-TN5" secondAttribute="bottom" constant="30" id="zyL-di-Dkh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -226,8 +241,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addBtn" width="512" height="512"/>
-        <image name="questionMarkBtn" width="920" height="920"/>
+        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="questionmark" catalog="system" width="94" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
